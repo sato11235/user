@@ -8,10 +8,10 @@
   user: ansible
   vars_files:
     - ./vars/users.yml
+    - ./vars/groups.yml
 
-
-
-    - nane: add user
+  tasks:
+    - name: add user
       user: 
        name: "{{ item.name }}"
        home: "{{ item.home }}"
@@ -22,3 +22,9 @@
       with_items:
         - "{{ users }}"
 
+    - name: add group
+      group:
+        name: "{{ item.name }}"
+        gid: "{{ item.gid }}"
+      with_items:
+        - "{{ groups }}"

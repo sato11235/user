@@ -6,3 +6,6 @@
   users:
     - { name: 'sato', uid: 2001, group: 'unix', shell: '/bin/bash', home: '/home/sato', password: "{{ 'test'|password_hash('sha512') }}"  }
     - { name: 'suzuki', uid: 2002, group: 'unix', shell: '/bin/bash', home: '/home/suzuki', password: "{{ 'test'|password_hash('sha512') }}"  }
+    - { name: 'tanaka', uid: 3001, group: 'linux', shell: '/bin/bash', home: '/home/suzuki', password: "{{ 'test'|password_hash('sha512') }}"  }
+
+

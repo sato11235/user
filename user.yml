@@ -1,0 +1,24 @@
+# ------------------------------
+# 適当にuserを作る
+# ------------------------------
+
+---
+- hosts: all
+  sudo: true
+  user: ansible
+  vars_files:
+    - ./vars/users.yml
+
+
+
+    - nane: add user
+      user: 
+       name: "{{ item.name }}"
+       home: "{{ item.home }}"
+       group: "{{ item.group }}"
+       uid: "{{ item.uid }}"
+       shell: "{{ item.shell }}"
+       password: "{{ item.password }}"
+      with_items:
+        - "{{ users }}"
+
